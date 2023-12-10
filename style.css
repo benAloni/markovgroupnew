@@ -1,0 +1,501 @@
+
+/* ___________עיצוב לשונית חיפוש___________ */
+.header {
+  border: solid 2px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+    background-color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    height: 150px;
+    
+    /* position: relative; */
+}
+
+#imglogo{height: 130px;
+width: 200px;}
+
+.logo {
+    /* display: inline-block; */
+    position: absolute;
+    left: 10%;
+    transform: translateX(-50%);
+    height: 100px;
+    margin-top: -20px;
+}
+/* _______________כותרת_______________ */
+
+/* סדרת קוד CSS לדיב התחתון */
+#bottom-div {
+    text-align: center; /* מרכוז הטקסט בתוך הדיב */
+    background-color: #ffffff; /* רקע גוון אפור במידת הצורך */
+    margin-top: 70px;
+    padding: 10px; /* מרווח פנימי סביב התוכן */
+    text-decoration:  underline 2px solid black ;
+    line-height: 5px;
+   
+}
+
+/* סדרת קוד CSS ל-h3 בתוך הדיב התחתון */
+#bottom-div h3 {
+    color: #000000; /* צבע הטקסט של ה-h3 */
+    font-size: 2.5em; /* גודל הפונט של ה-h3, יתאים גם למחשב וגם למובייל */
+    font-family: 'Oswald' sans-serif; 
+    letter-spacing: 5px;
+
+}
+
+/* קוד CSS לעיצוב רספונסיבי למכשירים ניידים */
+@media only screen and (max-width: 600px) {
+    #bottom-div h3 {
+        font-size: 1.5em; /* כשרוחב המסך פחות או שווה ל-600 פיקסלים, ישנה גודל פונט קטן יותר */
+        margin-top: -50px;
+    }
+    .header{text-align: left;
+    height: 105px;
+    }
+    
+    #imglogo{ height: 100px;
+    width: 150px;
+ 
+  }
+
+    
+}
+
+/* ___________כפתור המבורגר ________________________ */
+
+/* h1 {
+    text-align: center;
+    letter-spacing: 1px;
+    word-spacing: 0.15em;
+    font-size: 3em;
+    line-height: 1.2;
+    transform: translateY(52%);
+  } */
+  
+  
+  #toggle {
+    display: none;
+    position: relative;
+  }
+  
+  /**
+    Hamburger
+  **/
+  .hamburger {
+   
+    position: absolute;
+    top: 5em;
+    right: 5%;
+    margin-left: -2em;
+    margin-top: -45px;
+    width: 3em;
+    height: 45px;
+    z-index: 5;
+  }
+  
+  .hamburger div {
+    
+    position: relative;
+    width: 3em;
+    height: 4px;
+    border-radius: 3px;
+    background-color: #000000;
+    margin-top: 8px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /**
+  Nav Styles
+  **/
+  .nav {
+    position: relative;
+    z-index: 1;
+    position: absolute;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #695d5d;
+    top: -100%; left: 0; right: 0 ; bottom: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    transform: scale(0);
+    opacity: 90%;
+
+    
+   
+    
+  }
+  .nav-wrapper {
+   
+    position: relative;
+    overflow: hidden;
+    overflow-y: auto;
+    height: 100%;
+    
+  }
+  nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 200px;
+
+    /* margin-left: 40%; */
+   
+    
+  }
+  nav a {
+    position: relative;
+    text-decoration: none;
+    color:black;
+    font-size: 4em;
+    display: inline-block;
+    margin-top: 1.25em;
+    transition: color 0.2s ease-in-out;
+    letter-spacing: 1px;
+  }
+  nav a:before {
+    content: '';
+    height: 0;
+    position: absolute;
+    width: 0.25em;
+    background-color: white;
+    left: -0.5em;
+    transition: all 0.2s ease-in-out;
+  }
+  nav a:hover {
+    color: white;
+  }
+  nav a:hover:before {
+    
+    height: 100%;
+  }
+  
+  /**
+  Animations
+  **/
+  #toggle:checked + .hamburger .top-bun {
+    transform: rotate(-45deg);
+    margin-top: 25px;
+   
+  }
+  #toggle:checked + .hamburger .bottom-bun {
+    opacity: 0;
+    transform: rotate(45deg);
+  }
+  #toggle:checked + .hamburger .meat {
+    transform: rotate(45deg);
+    margin-top: -7px;
+    
+
+  }
+  
+  #toggle:checked + .hamburger + .nav {
+    top: 0;
+    transform: scale(1);
+
+  }
+
+
+
+/* Responsive Design */
+ @media screen and (max-width: 600px) {
+    .logo {
+        position: static;
+        transform: none;
+    }
+
+    nav a{ font-size: 3em;}
+
+    .dropdown {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    .hamburger div{width: 40px;height:4px;}
+  
+.hamburger{margin-top: -60px;}
+}
+
+
+
+/* _____________________gallery______________________ */
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.gallery {
+  
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1500px;
+    margin: 0 auto; 
+   /* display: flex; */
+   justify-content: center;
+   align-items: center;
+}
+
+.gallery-item {
+position: relative;
+height: 100%;
+overflow: hidden;
+border: solid 2px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 100%;
+    /* height: auto; */
+    transition: transform 0.3s, filter 0.3s;
+    cursor: pointer;
+}
+h1{ font-family: Arial, Helvetica, sans-serif;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+    filter: brightness(70%);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+.text {
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .gallery {
+        padding: 2px;
+        grid-template-columns: repeat(2, 1fr);
+        
+    }
+    #a1:hover{ letter-spacing: 2px;}
+
+    h1{ font-size: medium;
+    }
+    
+}
+
+/* ____________________צור קשר כפתור_______________________ */
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* למנוע מקפיץ הכפתור להזיז את הדף לצד */
+}
+
+.floating-button {
+    position: fixed;
+    right: 20px; /* תיקנה את המרחק מהצד בהתאם לצורך */
+    bottom: 20px; /* תיקנה את המרחק מהתחתית בהתאם לצורך */
+    width: 80px;
+    height: 80px;
+    border-radius: 80%;
+    background-color: #ffffff; /* צבע רקע */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* יצירת צל לכפתור */
+    cursor: pointer;
+    /* border-radius: 20px; */
+}
+
+.floating-button img {
+    width: 70%; /* גודל התמונה בתוך הכפתור */
+    height: 70%;
+    object-fit: contain; /* שמירה על יחסי תצוגה של התמונה */
+    
+}
+
+/* _____________________whatsapp_________________________ */
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* למנוע מקפיץ הכפתור להזיז את הדף לצד */
+}
+
+.whatsapp-button {
+  position: fixed;
+  left: 20px; /* תיקנה את המרחק מהצד בהתאם לצורך */
+  bottom: 20px; /* תיקנה את המרחק מהתחתית בהתאם לצורך */
+  width: 80px;
+  height: 80px;
+  border-radius: 80%;
+  background-color: #ffffff; /* צבע רקע */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* יצירת צל לכפתור */
+  cursor: pointer;
+  /* border-radius: 20px; */
+}
+
+.whatsapp-button img {
+  width: 90%; /* גודל התמונה בתוך הכפתור */
+  height: 90%;
+  border-radius: 50%;
+  object-fit: contain; /* שמירה על יחסי תצוגה של התמונה */
+  
+}
+
+
+/* ___________________connect us______________________ */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins' , sans-serif;
+}
+
+.container{
+width: 100%;
+height: 100vh;
+background-color: #0000005e;
+display: flex;
+align-items: center;
+justify-content: center;
+
+}
+
+form{background: rgb(255, 255, 255);
+display: flex;
+flex-direction: column;
+padding: 2vw 4vw;
+width: 90%;
+max-width: 600px;
+border-radius: 10px;
+}
+form h3{
+    color:rgb(255, 255, 255);
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+form input, form textarea{
+border: 0;
+margin: 10px 0 ;
+padding: 20px;
+outline: none;
+background: white;
+font-size: 16px;
+border-radius: 10px;
+border: solid 2px;
+width: 100%;
+}
+
+form button{
+padding: 15px;  
+background: rgb(0, 0, 0);
+color: aliceblue;
+font-size: 18px;
+border: solid 2px;
+
+outline: none;
+cursor: pointer;
+width: 150px;
+margin: 20px auto 0;
+border-radius: 30px;
+}
+
+
+  
+  #a1{
+    display: block;
+    font-size: 18px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #ffffff;
+    border-top: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+    padding: 10px;
+    letter-spacing: 2px;
+    transition: all .40s;
+  }
+  
+  #a1:hover{
+    letter-spacing: 15px;
+  }
+
+  /* _______________________ */
+  
+  .round-button {
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin-left: 36%;
+    margin-top: 18px;
+    border-radius: 20%;
+    background-color: #000000; /* צבע רקע */
+    color: #fff; /* צבע טקסט */
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+
+/* סגנון לתמונה בתוך הכפתור */
+.round-button img {
+    width: 40px;
+    height: 40px;
+    /* border-radius: %; */
+    margin-right: 10px;
+}
+
+@media (max-width: 600px) {
+  .round-button{ margin-top:-75px ;
+  margin-left: 250px;
+height: 30px;
+width: 30px;}
+
+.round-button img{ height: 30px;
+width: 30px;}
+}
+
+/* ___________________ */
+
+#aboutusImage{display: flex;
+margin-left: 50%;}
+#aboutusImage img{ width: 40%;
+
+}
+ 
+ 
+
+
+
+  
+  
+  
+ 
+  
+ 

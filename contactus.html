@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <title>markov group</title>
+    <script src="script.js"></script>       
+</head>
+<body>
+<!-- ___________________לשונית חיפוש_________________________ -->
+  <div class="header">
+    <div class="logo">
+     
+        <img id="imglogo"src="Pic\markov group.jpeg" alt="Your Logo" height="50">
+    </div>
+
+    <!-- <a href="tel:0545368686" class="round-button">
+      <img src="pic2\icons8-phone-50.png" alt="טלפון">
+      
+  </a> -->
+
+    <input id="toggle" type="checkbox"></input>
+
+    <label for="toggle" class="hamburger">
+      <div class="top-bun"></div>
+      <div class="meat"></div>
+      <div class="bottom-bun"></div>
+    </label>
+    
+    <div class="nav">
+      <div class="nav-wrapper">
+        <nav>
+          <a href="index.html">המוצרים שלנו</a>
+              <a href="aboutus.html">קצת עלינו</a>
+              <a href="contactus.html">השאר פרטים</a>
+          
+        </nav>
+      </div>
+    </div>
+
+    <div class="whatsapp-button" onclick="window.location.href='https:/wa.me/+972545368686'">
+      <img id="contactimg" src="pic2\whatsapp.png" alt="תיאור התמונה">
+  </div>
+</div>
+
+
+<!-- _______________________דיב השארת פרטים _________________________________-- -->
+    <div class="container">
+       <h1>השאר פרטים</h1>
+        <form target="_blank" action="https://formsubmit.co/benaloni230@gmail.com"  method="POST">
+          <div class="form-group">
+           
+            <div class="form-row">
+              <div class="col">
+                <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+              </div>
+              <div class="col">
+                <input type="number" name="number" class="form-control" placeholder="Phone number" required>
+              </div>
+              <div class="col">
+                <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-lg btn-dark btn-block">Submit Form</button>
+        </form>
+      </div>
+      <style>
+
+        /* ___________עיצוב הלשונית חיפוש______________ */
+      .header{position: sticky;
+          top: 0;
+          width: 100%;
+          z-index: 1000;
+        height: 140px; padding: 5px;}
+
+        .container{background-image: url('Pic/רכישת\ נדלן\ מסחרי\ 6.jpg'); /* הכתובת או הנתיב לתמונה שלך */}
+      
+      #imglogo{margin-top: 20px; }
+      
+    .round-button{ margin-top: 30px;}
+
+
+      /* _____כותרת ____*/
+      h1{position: absolute; margin-bottom:40% ; font-size: xx-large; text-decoration: underline;  font-family: 'Courier New', Courier, monospace; color: rgb(255, 255, 255);}
+
+      /* ____________עיצוב לשונית החיפוש לטלפון____________ */
+
+
+@media (max-width: 600px)
+{
+.header{opacity: 80%; height: 90px;}
+
+#imglogo{margin-top: 20px;height: 80px;width: 120px;}
+
+.hamburger div{width: 40px;height:4px;}
+  
+.hamburger{margin-top: -60px;}
+
+h1{ position: absolute; margin-bottom: 700px;
+}
+.round-button{ margin-top: -57px;}
+
+}
+
+      </style>
